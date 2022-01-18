@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'program_management.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-""" DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': config('DB_NAME'),
@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'program_management.wsgi.application'
         'HOST': config('DB_HOST'),
         'PORT': config('DB_PORT'),
     }
-} """
+}
 
 
 # Password validation
