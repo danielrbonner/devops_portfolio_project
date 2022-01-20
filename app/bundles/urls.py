@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('api/bundles/index/', bundles_views.index, name='bundles index'),
+    path('api/bundles/index/', bundles_views.index),
     # path('', bundles_views.index.as_view(), name='bundles'),
     path('api/bundles/', bundles_views.bundle_list),
     path('api/bundles/<int:pk>/', bundles_views.bundle_detail),

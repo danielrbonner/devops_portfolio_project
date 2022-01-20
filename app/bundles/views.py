@@ -21,6 +21,7 @@ def index(request):
     return render(request, "bundles/index.html", {'bundles': queryset})
 
 
+""" 
 class index(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'bundles/index.html'
@@ -36,7 +37,7 @@ class list_all_bundles(APIView):
 
     def get(self, request):
         queryset = Bundle.objects.all()
-        return Response({'bundles': queryset})
+        return Response({'bundles': queryset}) """
 
 
 # Create your views here.
