@@ -45,7 +45,7 @@ def program_list(request):
     if request.method == 'GET':
         programs = Program.objects.all()
 
-        program_id = request.GET.get('Program ID', None)
+        program_id = request.GET.get('program_id', None)
         if program_id is not None:
             programs = programs.filter(program_id__icontains=program_id)
 
