@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'bundles',
     'rest_framework',
     'items',
+    'issues',
 ]
 
 MIDDLEWARE = [

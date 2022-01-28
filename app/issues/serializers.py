@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from items.models import Item
+from issues.models import Issue
 
 
-class ItemSerializer(serializers.ModelSerializer):
+class IssueSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Item
-        fields = ('id', 'item_description', 'upc', 'language')
+        model = Issue
+        fields = ('id', 'issue_description', 'notes', 'issue_create_date', 'issue_due_date', 'program_id')
