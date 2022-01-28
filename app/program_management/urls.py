@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('bundles.urls')),
     path('', include('items.urls')),
     path('', include('issues.urls')),
+    path('', include('tasks.urls')),
 ]
