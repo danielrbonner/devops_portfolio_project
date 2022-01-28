@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('programs.urls')),
     path('', include('users.urls')),
     path('', include('bundles.urls')),
+    path('', include('items.urls')),
 ]
