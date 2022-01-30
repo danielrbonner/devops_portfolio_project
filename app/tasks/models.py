@@ -4,7 +4,6 @@ from users.models import User
 
 # Create your models here.
 
-
 class Task(models.Model):
     task_description = models.CharField(max_length=250, blank=False, default='')
     assigned_user_id = models.ForeignKey(User, on_delete=models.CASCADE)
