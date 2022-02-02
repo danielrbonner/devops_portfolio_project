@@ -3,3 +3,5 @@ app/.env
 dat__pycache__
 __pycache__/
 *.py[cod]
+*.log
+*.pot

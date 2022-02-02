@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: program-management
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: program-management
+  template:
+    metadata:
+      labels:
+        app: program-management
+    spec:
+      containers:
+        - args:
+            - python
+            - manage.py
+            - runserver
+            - 0.0.0.0:8000
+          env:
+            - name: DB_HOST
+              value: "devops-server.postgres.database.azure.com"
+            - name: DB_NAME
+              value: "devops_db"
+            - name: DB_PASSWORD
+              value: "123Rr!@#"
+            - name: DB_USER
+              value: "stingyelk7"
+            - name: DB_PORT
+              value: "5432"
+          image: rrdjangoregistry.azurecr.io/program_management:v1
+          name: devops-proejct
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: "app"
+                    operator: In
+                    values:
+                      - program-management
+              topologyKey: "kubernetes.io/hostname"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pm-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8000
+  selector:
+    app: program-management
